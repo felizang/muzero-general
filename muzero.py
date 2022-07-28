@@ -687,10 +687,12 @@ if __name__ == "__main__":
 
                 done = False
                 while not done:
-                    action = env.human_to_action()
+                    # action = env.human_to_action()
+                    action = env.action_space.sample()
                     observation, reward, done = env.step(action)
                     print(f"\nAction: {env.action_to_string(action)}\nReward: {reward}")
-                    env.render()
+                    # env.render()
+                    
             elif choice == 6:
                 # Define here the parameters to tune
                 # Parametrization documentation: https://facebookresearch.github.io/nevergrad/parametrization.html
@@ -708,5 +710,6 @@ if __name__ == "__main__":
             else:
                 break
             print("\nDone")
+            env.close()
 
     ray.shutdown()
