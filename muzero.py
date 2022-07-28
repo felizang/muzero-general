@@ -688,7 +688,7 @@ if __name__ == "__main__":
                 done = False
                 while not done:
                     # action = env.human_to_action()
-                    action = env.action_space.sample()
+                    action = env.legal_actions.sample()
                     observation, reward, done = env.step(action)
                     print(f"\nAction: {env.action_to_string(action)}\nReward: {reward}")
                     # env.render()
