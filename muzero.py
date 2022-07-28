@@ -710,6 +710,5 @@ if __name__ == "__main__":
             else:
                 break
             print("\nDone")
-            env.close()
-
+            
     ray.shutdown()
